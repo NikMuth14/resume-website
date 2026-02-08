@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikhil Muthyala - Data Scientist</title>
+    <title>PLAYER: Nikhil Muthyala // Data Scientist</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <div class="scanlines"></div>
+    <canvas id="particles"></canvas>
+
+    <!-- HUD Navigation -->
+    <nav class="hud-nav" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">NM</a>
+            <a href="#hero" class="nav-logo"><span class="logo-br">[</span>NM<span class="logo-br">]</span></a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">// PLAYER INFO</a></li>
+                <li><a href="#experience">// QUEST LOG</a></li>
+                <li><a href="#education">// TRAINING</a></li>
+                <li><a href="#skills">// SKILL TREE</a></li>
+                <li><a href="#projects">// ACHIEVEMENTS</a></li>
+                <li><a href="#certifications">// BADGES</a></li>
+                <li><a href="#contact">// JOIN PARTY</a></li>
             </ul>
-            <button class="nav-toggle" id="navToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero / Title Screen -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <p class="hero-greeting">Hello, I'm</p>
-            <h1 class="hero-name">Nikhil Muthyala</h1>
-            <p class="hero-title">Data Scientist | AI/ML Engineer</p>
-            <p class="hero-tagline">6+ years applying machine learning, statistics, and experimentation to real-world business problems</p>
+            <p class="hero-insert">PRESS START</p>
+            <p class="hero-class">CLASS: DATA SCIENTIST / AI ENGINEER</p>
+            <h1 class="hero-name glitch" data-text="NIKHIL MUTHYALA">NIKHIL MUTHYALA</h1>
+            <div class="hero-typing">
+                <span id="typingText"></span><span class="blink">_</span>
+            </div>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="#experience" class="btn btn-secondary">View My Work</a>
+                <a href="#about" class="btn-game"><span class="btn-arrow">&#9654;</span> START GAME</a>
+                <a href="#contact" class="btn-game btn-alt"><span class="btn-arrow">&#9993;</span> CONTACT</a>
             </div>
             <div class="hero-socials">
                 <a href="https://linkedin.com/in/nikhil-muthyala14" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -47,305 +50,231 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="hero-avatar">
+            <div class="avatar-frame">
                 <img src="Cover Photo Nik.jpeg" alt="Nikhil Muthyala">
-                <!-- <i class="fas fa-user"></i> -->
+                <div class="avatar-ring"></div>
+                <div class="avatar-ring r2"></div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About / Player Info -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Data Scientist with 6 years of experience applying machine learning, statistics, and experimentation to real-world business problems. Strong in Python/SQL, EDA, feature engineering, and building interactive dashboards (Power BI/Dash/QlikSense-style reporting) to drive decision-making.</p>
-                    <p>Experienced delivering scalable analytics solutions across cross-functional stakeholders. Based in Edison, NJ.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label">Companies</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Technologies</span>
-                        </div>
-                    </div>
+            <h2 class="section-title"><span class="deco">&#9670;</span> PLAYER INFO <span class="deco">&#9670;</span></h2>
+            <div class="terminal">
+                <div class="terminal-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="terminal-title">player_info.exe</span></div>
+                <div class="terminal-body">
+                    <p><span class="prompt">$</span> cat about.txt</p>
+                    <p class="t-out">Data Scientist with 6 years of experience applying machine learning, statistics, and experimentation to real-world business problems. Strong in Python/SQL, EDA, feature engineering, and building interactive dashboards (Power BI/Dash/QlikSense-style reporting) to drive decision-making.</p>
+                    <p class="t-out">Experienced delivering scalable analytics solutions across cross-functional stakeholders. Based in Edison, NJ.</p>
+                    <p><span class="prompt">$</span> <span class="blink">_</span></p>
                 </div>
+            </div>
+            <div class="stats-row">
+                <div class="game-stat"><div class="gs-icon">&#127918;</div><div class="gs-num" data-count="6">0</div><div class="gs-label">YEARS IN GAME</div></div>
+                <div class="game-stat"><div class="gs-icon">&#127942;</div><div class="gs-num" data-count="4">0</div><div class="gs-label">GUILDS JOINED</div></div>
+                <div class="game-stat"><div class="gs-icon">&#9876;&#65039;</div><div class="gs-num" data-count="15">0</div><div class="gs-label">WEAPONS MASTERED</div></div>
+                <div class="game-stat"><div class="gs-icon">&#128142;</div><div class="gs-num" data-count="99">0</div><div class="gs-label">POWER LEVEL</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience / Quest Log -->
     <section class="section section-alt" id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>AI Engineer (Applied Data Science / ML)</h3>
-                            <span class="timeline-date">Feb 2024 - Present</span>
+            <h2 class="section-title"><span class="deco">&#9670;</span> QUEST LOG <span class="deco">&#9670;</span></h2>
+            <div class="quest-log">
+                <div class="quest">
+                    <div class="quest-badge active">ACTIVE</div>
+                    <div class="quest-body">
+                        <div class="quest-top">
+                            <h3>&#9876;&#65039; AI Engineer (Applied Data Science / ML)</h3>
                         </div>
-                        <p class="timeline-company">MaxisAI</p>
-                        <ul class="timeline-details">
-                            <li>Built and deployed ML workflows for clinical-trial data operations, reducing manual review by 50+ hours per solution</li>
-                            <li>Designed experiments and evaluation (error analysis, regression tests, quality metrics) to improve model/workflow robustness</li>
-                            <li>Developed NLP/LLM-assisted information extraction pipelines to convert unstructured clinical documents into structured outputs</li>
-                            <li>Created stakeholder-facing dashboards to track workflow KPIs, exceptions, and quality trends</li>
-                            <li>Delivered rapid client POCs that helped secure 4 enterprise clients in 6 months and earned "Best of the Show" at BIO-IT World</li>
-                        </ul>
+                        <p class="quest-loc">&#128205; MaxisAI</p>
+                        <p class="quest-time">&#128339; Feb 2024 - Present</p>
+                        <div class="quest-obj">
+                            <p class="obj-title">OBJECTIVES:</p>
+                            <div class="obj done">&#9745; Built and deployed ML workflows for clinical-trial data operations, reducing manual review by 50+ hours per solution</div>
+                            <div class="obj done">&#9745; Designed experiments and evaluation to improve model/workflow robustness</div>
+                            <div class="obj done">&#9745; Developed NLP/LLM-assisted information extraction pipelines</div>
+                            <div class="obj done">&#9745; Created stakeholder-facing dashboards to track workflow KPIs</div>
+                            <div class="obj done">&#9745; Secured 4 enterprise clients in 6 months; earned "Best of the Show" at BIO-IT World</div>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Data Analyst II (ML & Analytics)</h3>
-                            <span class="timeline-date">Jan 2021 - Jan 2022</span>
+                <div class="quest">
+                    <div class="quest-badge done-badge">COMPLETED</div>
+                    <div class="quest-body">
+                        <div class="quest-top">
+                            <h3>&#128737;&#65039; Data Analyst II (ML & Analytics)</h3>
                         </div>
-                        <p class="timeline-company">Nano Healthcare</p>
-                        <ul class="timeline-details">
-                            <li>Performed EHR-driven EDA using Python (pandas/NumPy, Matplotlib/Seaborn) to identify outcome drivers, contributing to a 15% increase in treatment effectiveness</li>
-                            <li>Built baseline predictive models in PyTorch to validate signal on readmission-risk features</li>
-                            <li>Administered daily SSIS queries and database maintenance, improving task efficiency by 30%</li>
-                            <li>Automated analytics and reporting on demographics, readmission, and outcomes, reducing readmission by 11%</li>
-                        </ul>
+                        <p class="quest-loc">&#128205; Nano Healthcare</p>
+                        <p class="quest-time">&#128339; Jan 2021 - Jan 2022</p>
+                        <div class="quest-obj">
+                            <p class="obj-title">OBJECTIVES:</p>
+                            <div class="obj done">&#9745; EHR-driven EDA contributing to 15% increase in treatment effectiveness</div>
+                            <div class="obj done">&#9745; Built predictive models in PyTorch for readmission-risk features</div>
+                            <div class="obj done">&#9745; Improved task efficiency by 30% via SSIS query optimization</div>
+                            <div class="obj done">&#9745; Reduced readmission by 11% through automated analytics</div>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Associate Professional Application Delivery (Data Science / Analytics)</h3>
-                            <span class="timeline-date">Dec 2019 - Dec 2020</span>
+                <div class="quest">
+                    <div class="quest-badge done-badge">COMPLETED</div>
+                    <div class="quest-body">
+                        <div class="quest-top">
+                            <h3>&#128640; Data Science / Analytics - Application Delivery</h3>
                         </div>
-                        <p class="timeline-company">DXC Technologies</p>
-                        <ul class="timeline-details">
-                            <li>Built an end-to-end ingestion pipeline using Snowpipe (Snowflake) from AWS S3, improving data refresh and analytics throughput by 50%</li>
-                            <li>Created a BigQuery reporting layer with optimized table design, speeding KPI queries and reducing compute cost</li>
-                            <li>Developed preprocessing + feature engineering using PySpark and Python; trained models with scikit-learn to improve prediction accuracy by 15%</li>
-                            <li>Containerized recurring batch scoring using Docker on Linux, reducing pricing cycle time by 10%</li>
-                        </ul>
+                        <p class="quest-loc">&#128205; DXC Technologies</p>
+                        <p class="quest-time">&#128339; Dec 2019 - Dec 2020</p>
+                        <div class="quest-obj">
+                            <p class="obj-title">OBJECTIVES:</p>
+                            <div class="obj done">&#9745; Built Snowpipe ingestion pipeline from AWS S3, improving throughput by 50%</div>
+                            <div class="obj done">&#9745; Created optimized BigQuery reporting layer</div>
+                            <div class="obj done">&#9745; Feature engineering with PySpark; scikit-learn models improved accuracy by 15%</div>
+                            <div class="obj done">&#9745; Containerized batch scoring with Docker, reducing cycle time by 10%</div>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Marketing Business Analyst</h3>
-                            <span class="timeline-date">Jun 2018 - Aug 2019</span>
+                <div class="quest">
+                    <div class="quest-badge done-badge">COMPLETED</div>
+                    <div class="quest-body">
+                        <div class="quest-top">
+                            <h3>&#128200; Marketing Business Analyst</h3>
                         </div>
-                        <p class="timeline-company">BYJU's</p>
-                        <ul class="timeline-details">
-                            <li>Improved marketing performance by 25% leveraging Google Analytics and CRM data for segmentation and targeting</li>
-                            <li>Created stakeholder dashboards and reports to communicate insights and support decision-making</li>
-                        </ul>
+                        <p class="quest-loc">&#128205; BYJU's</p>
+                        <p class="quest-time">&#128339; Jun 2018 - Aug 2019</p>
+                        <div class="quest-obj">
+                            <p class="obj-title">OBJECTIVES:</p>
+                            <div class="obj done">&#9745; Improved marketing performance by 25% via Google Analytics & CRM</div>
+                            <div class="obj done">&#9745; Created stakeholder dashboards for insights and decision-making</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education / Training -->
     <section class="section" id="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Master's in Data Science</h3>
-                            <span class="timeline-date">2023</span>
+            <h2 class="section-title"><span class="deco">&#9670;</span> TRAINING GROUNDS <span class="deco">&#9670;</span></h2>
+            <div class="quest-log">
+                <div class="quest">
+                    <div class="quest-badge done-badge">COMPLETED</div>
+                    <div class="quest-body">
+                        <div class="quest-top">
+                            <h3>&#128220; Master's in Data Science</h3>
                         </div>
-                        <p class="timeline-company">University of Alabama at Birmingham (UAB)</p>
-                        <ul class="timeline-details">
-                            <li>Worked as a Teaching Assistant (TA) for Cloud Computing</li>
-                        </ul>
+                        <p class="quest-loc">&#128205; University of Alabama at Birmingham (UAB)</p>
+                        <p class="quest-time">&#128339; 2023</p>
+                        <div class="quest-obj">
+                            <p class="obj-title">ACHIEVEMENTS UNLOCKED:</p>
+                            <div class="obj done">&#127941; Teaching Assistant (TA) for Cloud Computing</div>
+                            <div class="obj done">&#127941; Data Science Specialization Complete</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills / Skill Tree -->
     <section class="section section-alt" id="skills">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">R</span>
-                    </div>
+            <h2 class="section-title"><span class="deco">&#9670;</span> SKILL TREE <span class="deco">&#9670;</span></h2>
+            <div class="skill-tree">
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-code"></i> PROGRAMMING</h3>
+                    <div class="skill-tags"><span class="sk-tag">Python</span><span class="sk-tag">SQL</span><span class="sk-tag">R</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> ML / Statistics</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Supervised/Unsupervised ML</span>
-                        <span class="skill-tag">Regression/Classification</span>
-                        <span class="skill-tag">Clustering</span>
-                        <span class="skill-tag">Model Evaluation</span>
-                        <span class="skill-tag">A/B Testing</span>
-                    </div>
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-brain"></i> ML / STATISTICS</h3>
+                    <div class="skill-tags"><span class="sk-tag">Supervised ML</span><span class="sk-tag">Unsupervised ML</span><span class="sk-tag">A/B Testing</span><span class="sk-tag">Model Evaluation</span><span class="sk-tag">Regression/Classification</span><span class="sk-tag">Clustering</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-layer-group"></i> ML Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">scikit-learn</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Pandas</span>
-                    </div>
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-layer-group"></i> ML LIBRARIES</h3>
+                    <div class="skill-tags"><span class="sk-tag">scikit-learn</span><span class="sk-tag">PyTorch</span><span class="sk-tag">TensorFlow</span><span class="sk-tag">Pandas</span><span class="sk-tag">NumPy</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-language"></i> NLP</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">NLTK</span>
-                        <span class="skill-tag">spaCy</span>
-                        <span class="skill-tag">Gensim</span>
-                    </div>
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-language"></i> NLP</h3>
+                    <div class="skill-tags"><span class="sk-tag">spaCy</span><span class="sk-tag">NLTK</span><span class="sk-tag">Gensim</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Dash</span>
-                        <span class="skill-tag">QlikSense</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                    </div>
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-chart-bar"></i> VISUALIZATION</h3>
+                    <div class="skill-tags"><span class="sk-tag">Power BI</span><span class="sk-tag">Dash</span><span class="sk-tag">QlikSense</span><span class="sk-tag">Matplotlib</span><span class="sk-tag">Seaborn</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud / Data</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GCP</span>
-                        <span class="skill-tag">BigQuery</span>
-                        <span class="skill-tag">AWS (S3, EC2, RDS)</span>
-                        <span class="skill-tag">Snowflake</span>
-                        <span class="skill-tag">Snowpipe</span>
-                    </div>
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-cloud"></i> CLOUD / DATA</h3>
+                    <div class="skill-tags"><span class="sk-tag">GCP</span><span class="sk-tag">BigQuery</span><span class="sk-tag">AWS (S3, EC2, RDS)</span><span class="sk-tag">Snowflake</span><span class="sk-tag">Snowpipe</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Big Data / ETL</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PySpark</span>
-                        <span class="skill-tag">Spark</span>
-                        <span class="skill-tag">Hive</span>
-                        <span class="skill-tag">ETL</span>
-                        <span class="skill-tag">Feature Engineering</span>
-                    </div>
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-database"></i> BIG DATA / ETL</h3>
+                    <div class="skill-tags"><span class="sk-tag">PySpark</span><span class="sk-tag">Spark</span><span class="sk-tag">Hive</span><span class="sk-tag">ETL</span><span class="sk-tag">Feature Engineering</span></div>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Engineering</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Linux/Unix</span>
-                        <span class="skill-tag">ML Pipelines</span>
-                    </div>
+                <div class="skill-branch">
+                    <h3 class="branch-name"><i class="fas fa-tools"></i> ENGINEERING</h3>
+                    <div class="skill-tags"><span class="sk-tag">Git</span><span class="sk-tag">Docker</span><span class="sk-tag">Linux/Unix</span><span class="sk-tag">ML Pipelines</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects / Achievements -->
     <section class="section" id="projects">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Predictive Modeling (Customer / Outcomes)</h3>
-                    <p>End-to-end predictive modeling pipeline for customer behavior and outcome prediction using supervised learning techniques.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>scikit-learn</span>
-                        <span>PyTorch</span>
-                    </div>
+            <h2 class="section-title"><span class="deco">&#9670;</span> ACHIEVEMENTS <span class="deco">&#9670;</span></h2>
+            <div class="achievements-grid">
+                <div class="achievement legendary">
+                    <div class="ach-rarity">&#9733; LEGENDARY</div>
+                    <div class="ach-icon">&#128200;</div>
+                    <h3>Predictive Modeling</h3>
+                    <p>End-to-end predictive modeling pipeline for customer behavior and outcome prediction.</p>
+                    <div class="ach-loot"><span>Python</span><span>scikit-learn</span><span>PyTorch</span></div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-language"></i></div>
+                <div class="achievement epic">
+                    <div class="ach-rarity">&#9733; EPIC</div>
+                    <div class="ach-icon">&#128483;&#65039;</div>
                     <h3>NLP Text Mining Pipeline</h3>
-                    <p>Natural language processing pipeline for text mining, entity extraction, and topic modeling from unstructured data.</p>
-                    <div class="project-tech">
-                        <span>spaCy</span>
-                        <span>NLTK</span>
-                        <span>Gensim</span>
-                    </div>
+                    <p>NLP pipeline for text mining, entity extraction, and topic modeling from unstructured data.</p>
+                    <div class="ach-loot"><span>spaCy</span><span>NLTK</span><span>Gensim</span></div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div class="achievement rare">
+                    <div class="ach-rarity">&#9733; RARE</div>
+                    <div class="ach-icon">&#128202;</div>
                     <h3>Interactive Analytics Dashboard</h3>
-                    <p>KPI monitoring and data visualization dashboard for real-time business intelligence and operational decision-making.</p>
-                    <div class="project-tech">
-                        <span>Power BI</span>
-                        <span>Dash</span>
-                        <span>Data Visualization</span>
-                    </div>
+                    <p>KPI monitoring and data visualization for real-time business intelligence.</p>
+                    <div class="ach-loot"><span>Power BI</span><span>Dash</span><span>Visualization</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- Certifications / Badges -->
     <section class="section section-alt" id="certifications">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <div class="cert-card">
-                    <i class="fab fa-google"></i>
-                    <span>Perform Predictive Data Analysis in BigQuery</span>
-                </div>
-                <div class="cert-card">
-                    <i class="fab fa-google"></i>
-                    <span>Implement CI/CD Pipelines on Google Cloud</span>
-                </div>
-                <div class="cert-card">
-                    <i class="fab fa-python"></i>
-                    <span>Python for Data Science, AI and Development</span>
-                </div>
-                <div class="cert-card">
-                    <i class="fab fa-google"></i>
-                    <span>Generative AI with Google Cloud (Foundation)</span>
-                </div>
+            <h2 class="section-title"><span class="deco">&#9670;</span> BADGES EARNED <span class="deco">&#9670;</span></h2>
+            <div class="badges-grid">
+                <div class="badge-card"><div class="badge-icon"><i class="fab fa-google"></i></div><span>Predictive Data Analysis in BigQuery</span></div>
+                <div class="badge-card"><div class="badge-icon"><i class="fab fa-google"></i></div><span>CI/CD Pipelines on Google Cloud</span></div>
+                <div class="badge-card"><div class="badge-icon"><i class="fab fa-python"></i></div><span>Python for Data Science, AI & Dev</span></div>
+                <div class="badge-card"><div class="badge-icon"><i class="fab fa-google"></i></div><span>Generative AI with Google Cloud</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact / Join Party -->
     <section class="section" id="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-content">
-                <p class="contact-text">I'm always open to new opportunities and interesting projects. Feel free to reach out!</p>
-                <div class="contact-methods">
-                    <a href="mailto:nikm8218@gmail.com" class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <span>nikm8218@gmail.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/nikhil-muthyala14" class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/nikhil-muthyala14</span>
-                    </a>
-                    <a href="tel:+12055630549" class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (205) 563-0549</span>
-                    </a>
-                    <a href="#" class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Edison, NJ</span>
-                    </a>
+            <h2 class="section-title"><span class="deco">&#9670;</span> JOIN PARTY <span class="deco">&#9670;</span></h2>
+            <div class="contact-game">
+                <p class="contact-text">&#127918; Looking for a new party member? Send a party invite!</p>
+                <div class="portal-grid">
+                    <a href="mailto:nikm8218@gmail.com" class="portal"><div class="portal-icon"><i class="fas fa-envelope"></i></div><span class="portal-label">EMAIL PORTAL</span><span class="portal-val">nikm8218@gmail.com</span></a>
+                    <a href="https://linkedin.com/in/nikhil-muthyala14" class="portal"><div class="portal-icon"><i class="fab fa-linkedin"></i></div><span class="portal-label">LINKEDIN REALM</span><span class="portal-val">nikhil-muthyala14</span></a>
+                    <a href="tel:+12055630549" class="portal"><div class="portal-icon"><i class="fas fa-phone"></i></div><span class="portal-label">VOICE CHANNEL</span><span class="portal-val">+1 (205) 563-0549</span></a>
+                    <a href="#" class="portal"><div class="portal-icon"><i class="fas fa-map-marker-alt"></i></div><span class="portal-label">SPAWN POINT</span><span class="portal-val">Edison, NJ</span></a>
                 </div>
             </div>
         </div>
@@ -353,35 +282,37 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Nikhil Muthyala. All rights reserved.</p>
+        <p>GAME OVER? NEVER. &copy; 2026 Nikhil Muthyala</p>
+        <p class="footer-sub">PRESS START TO CONTINUE...</p>
     </footer>
 
-    <!-- Chatbot -->
+    <!-- NPC Chatbot -->
     <div class="chatbot-toggle" id="chatbotToggle">
-        <i class="fas fa-comment-dots"></i>
+        <div class="npc-tag">NPC</div>
+        <i class="fas fa-hat-wizard"></i>
     </div>
     <div class="chatbot" id="chatbot">
         <div class="chatbot-header">
             <div class="chatbot-header-info">
-                <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
-                <div>
-                    <h4>Resume Assistant</h4>
-                    <span class="chatbot-status">Online</span>
-                </div>
+                <div class="chatbot-avatar">&#129497;</div>
+                <div><h4>Guide NPC</h4><span class="chatbot-status">&#9679; Online</span></div>
             </div>
-            <button class="chatbot-close" id="chatbotClose">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="chatbot-close" id="chatbotClose">&#10005;</button>
         </div>
         <div class="chatbot-messages" id="chatbotMessages">
             <div class="chat-message bot">
                 <div class="message-content">
-                    <p>Hi! I'm Nikhil's resume assistant. Ask me anything about his experience, skills, education, or projects!</p>
+                    <p>&#9876;&#65039; Greetings, adventurer! I am the Guide NPC. Ask me about this player's <strong>quests</strong>, <strong>skills</strong>, <strong>training</strong>, or <strong>achievements</strong>!</p>
                 </div>
             </div>
         </div>
+        <div class="chatbot-quick">
+            <button class="qbtn" onclick="quickAsk('skills')">&#127919; Skills</button>
+            <button class="qbtn" onclick="quickAsk('experience')">&#9876;&#65039; Quests</button>
+            <button class="qbtn" onclick="quickAsk('projects')">&#127942; Achievements</button>
+        </div>
         <div class="chatbot-input">
-            <input type="text" id="chatInput" placeholder="Ask me anything..." autocomplete="off">
+            <input type="text" id="chatInput" placeholder="Ask the Guide NPC..." autocomplete="off">
             <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
