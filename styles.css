@@ -73,6 +73,8 @@ ul { list-style: none; }
 .btn-game:hover { background: var(--primary); color: var(--bg); box-shadow: 0 0 20px rgba(0,255,136,0.3); transform: translateY(-2px); }
 .btn-alt { border-color: var(--neon-blue); color: var(--neon-blue); }
 .btn-alt:hover { background: var(--neon-blue); color: var(--bg); box-shadow: 0 0 20px rgba(0,212,255,0.3); }
+.btn-match { border-color: var(--neon-yellow); color: var(--neon-yellow); }
+.btn-match:hover { background: var(--neon-yellow); color: var(--bg); box-shadow: 0 0 20px rgba(255,238,0,0.3); }
 .btn-arrow { font-size: 0.7rem; }
 .hero-socials { display: flex; gap: 1rem; }
 .hero-socials a { width: 40px; height: 40px; border: 1px solid var(--surface); display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: var(--transition); font-size: 1rem; }
