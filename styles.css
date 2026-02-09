@@ -220,6 +220,41 @@ ul { list-style: none; }
 .chatbot-input button { background: var(--primary); border: none; border-radius: 4px; width: 38px; color: var(--bg); cursor: pointer; transition: var(--transition); font-size: 0.85rem; }
 .chatbot-input button:hover { box-shadow: 0 0 10px rgba(0,255,136,0.4); }
 
+/* ===== Fun Facts ===== */
+.fact-toggle { position: fixed; bottom: 2rem; left: 5rem; width: 55px; height: 55px; border-radius: 50%; background: var(--bg-alt); border: 2px solid var(--neon-yellow); color: var(--neon-yellow); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; cursor: pointer; z-index: 999; transition: var(--transition); box-shadow: 0 0 15px rgba(255,238,0,0.2); }
+.fact-toggle:hover { background: var(--neon-yellow); color: var(--bg); box-shadow: 0 0 25px rgba(255,238,0,0.4); transform: scale(1.1); }
+.fact-popup { position: fixed; bottom: 6rem; left: 5rem; width: 320px; background: var(--bg-alt); border: 1px solid rgba(255,238,0,0.3); border-radius: var(--radius); z-index: 998; display: none; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,0.5); padding: 1.2rem; }
+.fact-popup.open { display: flex; }
+.fact-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; }
+.fact-label { font-family: var(--font-game); font-size: 0.5rem; color: var(--neon-yellow); letter-spacing: 2px; display: flex; align-items: center; gap: 0.5rem; }
+.fact-close { background: none; border: none; color: var(--text-muted); font-size: 1rem; cursor: pointer; transition: var(--transition); }
+.fact-close:hover { color: var(--neon-pink); }
+.fact-text { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text); line-height: 1.6; margin-bottom: 1rem; }
+.fact-next { font-family: var(--font-game); font-size: 0.45rem; padding: 0.6rem; background: transparent; border: 1px solid rgba(255,238,0,0.3); color: var(--neon-yellow); border-radius: 4px; cursor: pointer; transition: var(--transition); letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+.fact-next:hover { background: rgba(255,238,0,0.1); box-shadow: 0 0 10px rgba(255,238,0,0.2); }
+
+/* ===== Tic Tac Toe ===== */
+.ttt-toggle { position: fixed; bottom: 2rem; left: 2rem; width: 55px; height: 55px; border-radius: 50%; background: var(--bg-alt); border: 2px solid var(--neon-purple); color: var(--neon-purple); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; cursor: pointer; z-index: 999; transition: var(--transition); box-shadow: 0 0 15px rgba(180,74,255,0.2); }
+.ttt-toggle:hover { background: var(--neon-purple); color: var(--bg); box-shadow: 0 0 25px rgba(180,74,255,0.4); transform: scale(1.1); }
+.ttt-modal { position: fixed; bottom: 6rem; left: 2rem; width: 300px; background: var(--bg-alt); border: 1px solid rgba(180,74,255,0.3); border-radius: var(--radius); z-index: 998; display: none; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.ttt-modal.open { display: flex; }
+.ttt-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.2rem; border-bottom: 1px solid rgba(180,74,255,0.15); }
+.ttt-title { font-family: var(--font-game); font-size: 0.55rem; color: var(--neon-purple); letter-spacing: 2px; display: flex; align-items: center; gap: 0.5rem; }
+.ttt-close { background: none; border: none; color: var(--text-muted); font-size: 1rem; cursor: pointer; transition: var(--transition); }
+.ttt-close:hover { color: var(--neon-pink); }
+.ttt-status { text-align: center; font-family: var(--font-mono); font-size: 0.8rem; color: var(--neon-blue); padding: 0.8rem; letter-spacing: 1px; }
+.ttt-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 0 1.2rem; }
+.ttt-cell { aspect-ratio: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(180,74,255,0.1); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-hud); font-size: 2rem; font-weight: 900; cursor: pointer; transition: var(--transition); color: transparent; }
+.ttt-cell:hover { background: rgba(180,74,255,0.08); border-color: rgba(180,74,255,0.25); }
+.ttt-cell.x { color: var(--primary); text-shadow: 0 0 10px rgba(0,255,136,0.4); }
+.ttt-cell.o { color: var(--neon-pink); text-shadow: 0 0 10px rgba(255,0,170,0.4); }
+.ttt-cell.win { animation: tttWin 0.6s ease; }
+@keyframes tttWin { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+.ttt-score { display: flex; justify-content: center; gap: 2rem; padding: 0.8rem; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
+.ttt-score strong { color: var(--text); }
+.ttt-reset { margin: 0 1.2rem 1rem; padding: 0.6rem; font-family: var(--font-game); font-size: 0.45rem; background: transparent; border: 1px solid rgba(180,74,255,0.3); color: var(--neon-purple); border-radius: 4px; cursor: pointer; transition: var(--transition); letter-spacing: 1px; }
+.ttt-reset:hover { background: rgba(180,74,255,0.15); box-shadow: 0 0 10px rgba(180,74,255,0.2); }
+
 /* ===== Animations ===== */
 .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -240,4 +275,8 @@ ul { list-style: none; }
     .skill-tree { grid-template-columns: 1fr; }
     .chatbot { width: calc(100% - 2rem); right: 1rem; bottom: 1rem; height: 60vh; }
     .portal-grid { grid-template-columns: 1fr 1fr; }
+    .ttt-modal { left: 1rem; width: calc(100% - 2rem); bottom: 6rem; }
+    .ttt-toggle { left: 1rem; bottom: 1rem; }
+    .fact-toggle { left: 4.5rem; bottom: 1rem; }
+    .fact-popup { left: 1rem; width: calc(100% - 2rem); bottom: 6rem; }
 }

@@ -287,6 +287,47 @@
         <p class="footer-sub">PRESS START TO CONTINUE...</p>
     </footer>
 
+    <!-- Fun Facts -->
+    <div class="fact-toggle" id="factToggle" title="Random Fun Fact">
+        <i class="fas fa-lightbulb"></i>
+    </div>
+    <div class="fact-popup" id="factPopup">
+        <div class="fact-header">
+            <span class="fact-label"><i class="fas fa-lightbulb"></i> DID YOU KNOW?</span>
+            <button class="fact-close" id="factClose">&#10005;</button>
+        </div>
+        <p class="fact-text" id="factText"></p>
+        <button class="fact-next" id="factNext"><i class="fas fa-sync-alt"></i> ANOTHER FACT</button>
+    </div>
+
+    <!-- Tic Tac Toe Mini-Game -->
+    <div class="ttt-toggle" id="tttToggle" title="Play Tic Tac Toe">
+        <i class="fas fa-gamepad"></i>
+    </div>
+    <div class="ttt-modal" id="tttModal">
+        <div class="ttt-header">
+            <div class="ttt-title"><i class="fas fa-gamepad"></i> TIC TAC TOE</div>
+            <button class="ttt-close" id="tttClose">&#10005;</button>
+        </div>
+        <div class="ttt-status" id="tttStatus">YOUR TURN (X)</div>
+        <div class="ttt-board" id="tttBoard">
+            <div class="ttt-cell" data-i="0"></div>
+            <div class="ttt-cell" data-i="1"></div>
+            <div class="ttt-cell" data-i="2"></div>
+            <div class="ttt-cell" data-i="3"></div>
+            <div class="ttt-cell" data-i="4"></div>
+            <div class="ttt-cell" data-i="5"></div>
+            <div class="ttt-cell" data-i="6"></div>
+            <div class="ttt-cell" data-i="7"></div>
+            <div class="ttt-cell" data-i="8"></div>
+        </div>
+        <div class="ttt-score">
+            <span>YOU: <strong id="tttPlayerScore">0</strong></span>
+            <span>CPU: <strong id="tttCpuScore">0</strong></span>
+        </div>
+        <button class="ttt-reset" id="tttReset">&#128260; NEW GAME</button>
+    </div>
+
     <!-- NPC Chatbot -->
     <div class="chatbot-toggle" id="chatbotToggle">
         <div class="npc-tag">NPC</div>

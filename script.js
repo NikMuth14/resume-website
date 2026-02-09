@@ -279,3 +279,162 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// ===== Fun Facts =====
+(function() {
+    const facts = [
+        "The first computer bug was an actual bug — a moth found in a Harvard Mark II computer in 1947.",
+        "The first programmer in history was Ada Lovelace, who wrote an algorithm for Charles Babbage's Analytical Engine in 1843.",
+        "About 90% of the world's data was generated in just the last two years.",
+        "The average software developer writes only about 10-12 lines of production code per day.",
+        "Git was created by Linus Torvalds in just 10 days because he was frustrated with existing version control tools.",
+        "The first 1GB hard drive, made by IBM in 1980, weighed over 500 pounds and cost $40,000.",
+        "Python is named after Monty Python's Flying Circus, not the snake.",
+        "The first website ever created is still online at info.cern.ch — it was published in 1991.",
+        "There are approximately 700 different programming languages in existence today.",
+        "NASA's Apollo 11 guidance computer had less processing power than a modern calculator.",
+        "The term 'debugging' became popular after Grace Hopper literally removed a moth from a computer relay.",
+        "JavaScript was created in just 10 days by Brendan Eich in 1995 while working at Netscape.",
+        "Over 65% of all websites on the internet use JavaScript in some form.",
+        "The first computer virus, called 'Creeper', was created in 1971 as an experiment — it displayed 'I'm the creeper, catch me if you can!'",
+        "Stack Overflow has over 23 million questions answered — the most popular tag is JavaScript.",
+        "A single Google search uses more computing power than the entire Apollo 11 moon mission.",
+        "The QWERTY keyboard layout was designed in 1873 to prevent typewriter jams by separating common letter pairs.",
+        "The world's first domain name ever registered was symbolics.com on March 15, 1985.",
+        "Machine learning models can now write code, compose music, and generate art — but still struggle with CAPTCHAs.",
+        "The average person spends about 6 hours and 58 minutes per day on screens connected to the internet."
+    ];
+
+    let lastIndex = -1;
+    const factToggle = document.getElementById('factToggle');
+    const factPopup = document.getElementById('factPopup');
+    const factClose = document.getElementById('factClose');
+    const factNext = document.getElementById('factNext');
+    const factText = document.getElementById('factText');
+
+    function showRandomFact() {
+        let idx;
+        do { idx = Math.floor(Math.random() * facts.length); } while (idx === lastIndex);
+        lastIndex = idx;
+        factText.textContent = facts[idx];
+    }
+
+    factToggle.addEventListener('click', () => {
+        const isOpen = factPopup.classList.toggle('open');
+        if (isOpen) showRandomFact();
+    });
+    factClose.addEventListener('click', () => factPopup.classList.remove('open'));
+    factNext.addEventListener('click', showRandomFact);
+})();
+
+// ===== Tic Tac Toe =====
+(function() {
+    const tttToggle = document.getElementById('tttToggle');
+    const tttModal = document.getElementById('tttModal');
+    const tttClose = document.getElementById('tttClose');
+    const tttReset = document.getElementById('tttReset');
+    const tttStatus = document.getElementById('tttStatus');
+    const cells = document.querySelectorAll('.ttt-cell');
+    const playerScoreEl = document.getElementById('tttPlayerScore');
+    const cpuScoreEl = document.getElementById('tttCpuScore');
+
+    let board = Array(9).fill('');
+    let gameActive = true;
+    let playerScore = 0;
+    let cpuScore = 0;
+    const PLAYER = 'X';
+    const CPU = 'O';
+    const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+    tttToggle.addEventListener('click', () => tttModal.classList.toggle('open'));
+    tttClose.addEventListener('click', () => tttModal.classList.remove('open'));
+    tttReset.addEventListener('click', resetGame);
+
+    cells.forEach(cell => {
+        cell.addEventListener('click', () => {
+            const i = parseInt(cell.dataset.i);
+            if (board[i] || !gameActive) return;
+            makeMove(i, PLAYER);
+            if (!gameActive) return;
+            setTimeout(cpuMove, 350);
+        });
+    });
+
+    function makeMove(i, mark) {
+        board[i] = mark;
+        cells[i].textContent = mark;
+        cells[i].classList.add(mark.toLowerCase());
+        const winCombo = checkWin(mark);
+        if (winCombo) {
+            gameActive = false;
+            winCombo.forEach(idx => cells[idx].classList.add('win'));
+            if (mark === PLAYER) {
+                playerScore++;
+                playerScoreEl.textContent = playerScore;
+                tttStatus.textContent = 'YOU WIN!';
+                tttStatus.style.color = '#00ff88';
+            } else {
+                cpuScore++;
+                cpuScoreEl.textContent = cpuScore;
+                tttStatus.textContent = 'CPU WINS!';
+                tttStatus.style.color = '#ff00aa';
+            }
+            return;
+        }
+        if (!board.includes('')) {
+            gameActive = false;
+            tttStatus.textContent = 'DRAW!';
+            tttStatus.style.color = '#ffee00';
+            return;
+        }
+    }
+
+    function cpuMove() {
+        if (!gameActive) return;
+        // Try to win
+        let move = findBestMove(CPU);
+        // Try to block
+        if (move === -1) move = findBestMove(PLAYER);
+        // Take center
+        if (move === -1 && !board[4]) move = 4;
+        // Take corner
+        if (move === -1) move = [0,2,6,8].find(i => !board[i]) ?? -1;
+        // Take any
+        if (move === -1) move = board.indexOf('');
+        if (move !== -1) {
+            makeMove(move, CPU);
+            if (gameActive) {
+                tttStatus.textContent = 'YOUR TURN (X)';
+                tttStatus.style.color = '#00d4ff';
+            }
+        }
+    }
+
+    function findBestMove(mark) {
+        for (const combo of wins) {
+            const vals = combo.map(i => board[i]);
+            if (vals.filter(v => v === mark).length === 2 && vals.includes('')) {
+                return combo[vals.indexOf('')];
+            }
+        }
+        return -1;
+    }
+
+    function checkWin(mark) {
+        for (const combo of wins) {
+            if (combo.every(i => board[i] === mark)) return combo;
+        }
+        return null;
+    }
+
+    function resetGame() {
+        board = Array(9).fill('');
+        gameActive = true;
+        tttStatus.textContent = 'YOUR TURN (X)';
+        tttStatus.style.color = '#00d4ff';
+        cells.forEach(cell => {
+            cell.textContent = '';
+            cell.className = 'ttt-cell';
+        });
+    }
+})();
